@@ -17,7 +17,6 @@ public class EmployeeBook {
         employee[9] = new Employee("Бортников Виталий Иванович", 3, 27000);
     }
 
-
     public Employee[] getEmployee() {
         return employee;
     }
