@@ -28,8 +28,8 @@ public class EmployeeBook {
         }
     }
 
-    public int sumSalaryMonth(Employee[] employees) {
-        int sum = 0;
+    public double sumSalaryMonth(Employee[] employees) {
+        double sum = 0;
         for (int i = 0; i < employees.length; i++) {
             sum += employees[i].getSalary();
         }
@@ -45,9 +45,9 @@ public class EmployeeBook {
     }
 
     public void minSalaryEmployee(Employee[] employees) {
-        Employee min = null;
+        Employee min = employees[0];
         for (Employee e : employees) {
-            if (min == null || e.getSalary() < min.getSalary()) {
+            if (e.getSalary() < min.getSalary()) {
                 min = e;
             }
         }
@@ -55,26 +55,26 @@ public class EmployeeBook {
     }
 
     public void maxSalaryEmployee(Employee[] employees) {
-        Employee max = null;
+        Employee max = employees[0];
         for (Employee e : employees) {
-            if (max == null || e.getSalary() > max.getSalary()) {
+            if (e.getSalary() > max.getSalary()) {
                 max = e;
             }
         }
         printMaxMinSalary(max);
     }
 
-    public int salaryAverage(Employee[] employees){
-        int averageValue;
-        averageValue = sumSalaryMonth(employees) / employees.length;
+    public double salaryAverage(Employee[] employees){
+        double averageValue;
+        averageValue = (double) sumSalaryMonth(employees) / employees.length;
         return averageValue;
     }
 
     public void fullNameOfAllEmployees(Employee[] employees) {
-        String FullName;
+        String fullName;
         for (int i = 0; i < employees.length; i++){
-            FullName = employees[i].getFullName();
-            System.out.println(FullName);
+            fullName = employees[i].getFullName();
+            System.out.println(fullName);
         }
     }
 }
