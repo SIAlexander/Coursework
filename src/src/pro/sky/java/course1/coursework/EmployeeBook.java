@@ -1,7 +1,7 @@
 package src.pro.sky.java.course1.coursework;
 
 public class EmployeeBook {
-    private Employee employee[];
+    private final Employee employee[];
 
     public EmployeeBook() {
         this.employee = new Employee[10];

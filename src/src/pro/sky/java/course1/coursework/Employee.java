@@ -3,11 +3,11 @@ package src.pro.sky.java.course1.coursework;
 import java.util.Objects;
 
 public class Employee {
-    private String fullName;
+    private final String fullName;
     private int dept;
     private double salary;
     private static int counter;
-    private int id;
+    private final int id;
 
     public Employee(String fullName, int dept, int salary) {
         this.fullName = fullName;
