@@ -1,33 +1,70 @@
 package src.pro.sky.java.course1.coursework;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
     public static void main(String[] args) {
         EmployeeBook employeeBook = new EmployeeBook();
-
-        //вывод всех полей toString()
-        employeeBook.fullInformationEmployees(employeeBook.getEmployee());
-        System.out.println("____________________________________________________________________");
-
-        //Посчитать сумму затрат на зарплаты в месяц
-        System.out.println("Сумма затрат на зарплаты в месяц: " + employeeBook.sumSalaryMonth(employeeBook.getEmployee()));
-        System.out.println("____________________________________________________________________");
-
-        //Найти сотрудника с минимальной зарплатой
-        System.out.println("Сотрудник с минимальной зарплатой:");
-        employeeBook.minSalaryEmployee(employeeBook.getEmployee());
-        System.out.println("____________________________________________________________________");
-
-
-        //Найти сотрудника с максимальной зарплатой
-        System.out.println("Сотрудник с максимальной зарплатой:");
-        employeeBook.maxSalaryEmployee(employeeBook.getEmployee());
-        System.out.println("____________________________________________________________________");
-
-        //Подсчитать среднее значение зарплат
-        System.out.println("Среднее знаечние зарплат: " + employeeBook.salaryAverage(employeeBook.getEmployee()));
-        System.out.println("____________________________________________________________________");
-
-        //Получить Ф. И. О. всех сотрудников (вывести в консоль).
-        employeeBook.fullNameOfAllEmployees(employeeBook.getEmployee());
+        System.out.println("Вывод полной информации");
+        employeeBook.fullInformationEmployees();
+        System.out.println();
+        System.out.println("Сумма затрат на зарплаты в месяц: " + employeeBook.sumSalaryMonth());
+        System.out.println();
+        System.out.println("Сотрудник с минимальной зарплатой: ");
+        System.out.println(employeeBook.minSalaryEmployee());
+        System.out.println();
+        System.out.println("Сотрудник с максимальной зарплатой: ");
+        System.out.println(employeeBook.maxSalaryEmployee());
+        System.out.println();
+        System.out.println("Средняя зарплата " + employeeBook.salaryAverage());
+        System.out.println();
+        System.out.println("Вывод ФИО всех сотрудников");
+        employeeBook.fullNameOfAllEmployees();
+        System.out.println();
+        System.out.println("Индексация зарплаты у всех сотрудников");
+        employeeBook.salaryIndexing(15.0);
+        employeeBook.fullInformationEmployees();
+        System.out.println();
+        System.out.println("Вывод минимальной зарплаты по отделу");
+        System.out.println(employeeBook.minSalaryEmployee(2));
+        System.out.println();
+        System.out.println("Вывод максимальной зарплаты по отделу");
+        System.out.println(employeeBook.maxSalaryEmployee(2));
+        System.out.println();
+        System.out.println("Вывод полной информации по отделу");
+        employeeBook.fullInformationEmployees(2);
+        System.out.println();
+        System.out.println("Сумма затрат на зарплаты по отделу в месяц: " + employeeBook.sumSalaryMonth(2));
+        System.out.println();
+        System.out.println("Средняя зарплата по отделу: " + employeeBook.salaryAverage(2));
+        System.out.println();
+        System.out.println("Индексация зарплаты по отделу");
+        employeeBook.salaryIndexing(15,2);
+        employeeBook.fullInformationEmployees(2);
+        System.out.println();
+        System.out.println("Вывод сотрудников с зарплатой меньше числа");
+        employeeBook.employeesSalaryLessNumber(20000.0);
+        System.out.println();
+        System.out.println("Вывод сотруднкиов с зарплатой больше числа");
+        employeeBook.employeesSalaryGreaterNumber(30000.0);
+        System.out.println();
+        System.out.println("Удаление сотрудника");
+        employeeBook.deleteEmployee(1);
+        employeeBook.deleteEmployee("Петров Михаил Степанович");
+        employeeBook.fullInformationEmployees();
+        System.out.println();
+        System.out.println("Добавление сотрудника");
+        employeeBook.addEmployee(new Employee("Кузнецов Семен Семенович",2,20000));
+        employeeBook.fullInformationEmployees();
+        System.out.println();
+        System.out.println("Смена зарплаты");
+        employeeBook.changeSalaryEmployee("Кузнецов Семен Семенович", 29000);
+        employeeBook.fullInformationEmployees();
+        System.out.println();
+        System.out.println("Смена отдела");
+        employeeBook.changeDeptEmployee("Тищенко Мария Яковлевна", 3);
+        employeeBook.fullInformationEmployees();
+        System.out.println();
+        employeeBook.printEmployeesByDept();
     }
 }
